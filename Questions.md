@@ -26,8 +26,77 @@ Ref: https://stackoverflow.com/questions/500606/deleting-array-elements-in-javas
 
 **Explanation:**
 Delete will delete the object property, but will not reindex the array or update its length. This makes it appears as if it is undefined.
-```
+```javascript
 var myArray = ['a', 'b', 'c', 'd'];
 delete myArray[0];
 console.log(myArray); // [empty, "b", "c", "d"] (Chrome Browser)
+```
+
+## 4. What will be the output
+```javascript
+greetings();
+ var greetings = function(){
+console.log("first greet");
+};
+greetings();
+function greetings(){
+console.log("second greet");
+};
+greetings();
+```
+**Output:** 
+```
+second greet
+first greet
+first greet
+```
+
+```javascript
+(function () {
+    try {
+        throw new Error();
+    } catch (x) {
+        var x = 1, y = 2;
+        console.log(x);
+    }
+    console.log(x);
+    console.log(y);
+})();
+```
+**Output:** 
+```
+1
+undefined
+2
+```
+
+**Input**
+```javascript
+let input = {
+ user: {
+  name: "John",
+  tech: "Frontend",
+  address: {
+   home: {
+    add_1: "home_dummy_add_1",
+    add_2: "home_dummy_add_2",
+   },
+   office: {
+    add_1: "off_dummy_add_1",
+    add_2: "off_dummy_add_2",
+   },
+  },
+ },
+};
+```
+**Expected Output**
+```javascript
+{
+  user_name: 'John'
+  user_tech: 'frontend'
+  user_address_home_add_1: 'home_dummy_add_1'
+  user_address_home_add_2: 'home_dummy_add_2'
+  user_address_office_add_1: 'off_dummy_add_1'
+  user_address_office_add_2: 'off_dummy_add_2'
+}
 ```
